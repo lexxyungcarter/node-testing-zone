@@ -1,0 +1,22 @@
+{
+  "name": "graphql-server-api-wd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.11.0",
+    "apollo-server": "^3.12.0",
+    "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.11.0"
+  }
+}
