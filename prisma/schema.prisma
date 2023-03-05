@@ -35,3 +35,13 @@ model Employee {
   branch Branch @relation(fields: [branchId], references: [id])
   branchId Int
 }
+
+model Order {
+  id Int @default(autoincrement()) @id
+  deliveryAddress String
+  items String // sqlite doesn't support Json
+  total Float
+  discountCode String?
+  comment String?
+  status String
+}

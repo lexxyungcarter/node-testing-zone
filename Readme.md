@@ -2,7 +2,7 @@
 
 ## Dev
 ### node
-npx ts-node src/index.ts
+npm start
 
 ### Prisma
 npx prisma studio
