@@ -3,7 +3,7 @@ import { gql } from "apollo-server";
 
 const prisma = new PrismaClient();
 
-import books from "../../data/books";
+import books from "../../data/books.js";
 // import companies from '../data/company';
 // import branches from '../data/branch';
 // import employees from '../data/employee'
@@ -56,6 +56,7 @@ export const typeDefs = gql`
     companies: [Company]
     branches: [Branch]
     employees: [Employee]
+    company(id: Int!): Company
   }
 `;
 
@@ -67,6 +68,10 @@ export const resolvers = {
     companies: () => {
       return prisma.company.findMany();
     },
+    company: (_parent, args) =>
+      prisma.company.findUnique({
+        where: { id: args.id },
+      }),
     branches: () => prisma.branch.findMany(),
     employees: () => prisma.employee.findMany(),
   },
